@@ -1,0 +1,33 @@
+<div class="row" data-controller="channel" data-channel-id="<%= @channel.id %>">
+  <div class="col-sm-2">
+    <%= render "shared/sidebar" %>
+  </div>
+
+  <div class="col-sm-10 relative">
+    <div class="d-flex justify-content-between sticky-top bg-white border-bottom pt-2">
+      <strong>#<%= @channel.name %></strong>
+
+      <div>
+        <%= link_to "Leave", channel_channel_user_path(@channel), method: :delete, class: "btn btn-link" %>
+      </div>
+    </div>
+
+    <div data-target="channel.messages">
+      <%= render @channel.messages %>
+    </div>
+
+  </div>
+
+  <div class="fixed-bottom row">
+    <div class="col-sm-10 offset-sm-2 p-2 bg-white">
+      <% if current_user.channels.include?(@channel) %>
+        <%= form_with model: [@channel, Message.new], data: { action: "ajax:success->channel#clearMessage" } do |form| %>
+          <%= form.text_field :body, placeholder: "Message ##{@channel.name}", class: "form-control", data: { target: "channel.newMessage" } %>
+        <% end %>
+
+      <% else %>
+        <%= link_to "Join #{@channel.name}", channel_channel_user_path(@channel), method: :post %>
+      <% end %>
+    </div>
+  </div>
+</div>
