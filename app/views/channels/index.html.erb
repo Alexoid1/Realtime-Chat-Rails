@@ -1,41 +1,42 @@
 
 
+<div class="channelsIndex">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Channels</h1>
+    </div>
 
-<div class="row">
-  <div class="col-sm-6">
-    <h1>Channels</h1>
+    <div class="col-sm-6 text-right">
+    <%= link_to new_channel_path, class: 'btn btn-primary' do %>
+      Add New Channel
+    <% end %>
+    </div>
   </div>
 
-  <div class="col-sm-6 text-right">
-  <%= link_to new_channel_path, class: 'btn btn-primary' do %>
-    Add New Channel
-  <% end %>
-  </div>
-</div>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+      
+          <th>Name</th>
+      
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-      <tr>
-    
-        <th>Name</th>
-    
+              
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @channels.each do |channel| %>
+          <%= content_tag :tr, id: dom_id(channel), class: dom_class(channel) do %>
+            
+              <td><%= link_to channel.name, channel %></td>
+            
 
             
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @channels.each do |channel| %>
-        <%= content_tag :tr, id: dom_id(channel), class: dom_class(channel) do %>
-          
-            <td><%= link_to channel.name, channel %></td>
-          
-
-          
-          
+            
+          <% end %>
         <% end %>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
+  </div>
 </div>
