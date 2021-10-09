@@ -16,6 +16,7 @@
         width: 60%;
         min-width: 280px;
         background: white;
+        
         border-radius:20px ;
         .table{
             tbody {
@@ -54,6 +55,9 @@
     }
     .relative {
         .messageB{
+            min-height: 90vh;
+            background: white;
+            padding: 0 0 70px 20px;
             .message {
                 
                 min-width: 59px;
@@ -72,6 +76,7 @@
                 &.me {
                     display: flex;
                     justify-content: right;
+                    margin-right: 20px;
                     .content-container{
                         .content{
                             background-color: #007BFF;
