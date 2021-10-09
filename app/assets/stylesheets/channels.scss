@@ -16,5 +16,25 @@
         width: 60%;
         background: white;
         border-radius:20px ;
+        .table{
+            tbody {
+                tr{
+                    td{
+                        .not-show{
+                            display: none;
+                        }
+                        .textOr{
+                            &:hover{
+                                color: rgb(244,130,37);
+                            }
+                        }
+                    &:hover > .not-show {
+                        display: inline-block;
+                    }
+                        
+                    }
+                }
+            }
+        }
     }
 }

@@ -29,7 +29,8 @@
         <% @channels.each do |channel| %>
           <%= content_tag :tr, id: dom_id(channel), class: dom_class(channel) do %>
             
-              <td><%= link_to channel.name, channel %></td>
+              <td><i class="fas fa-sign-in-alt not-show"></i>
+              <%= link_to channel.name, channel, class: "textOr" %></td>
             
 
             
