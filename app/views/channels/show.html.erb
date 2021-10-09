@@ -1,5 +1,5 @@
-<div class="row" data-controller="channel" data-channel-id="<%= @channel.id %>">
-  <div class="col-sm-2">
+<div class="row showContainer" data-controller="channel" data-channel-id="<%= @channel.id %>">
+  <div class="col-sm-2 sidebar">
     <%= render "shared/sidebar" %>
   </div>
 
@@ -8,7 +8,7 @@
       <strong>#<%= @channel.name %></strong>
 
       <div>
-        <%= link_to "Leave", channel_channel_user_path(@channel), method: :delete, class: "btn btn-link" %>
+        <%= link_to "Leave", channel_channel_user_path(@channel), method: :delete, class: "linkk btn btn-link" %>
       </div>
     </div>
 

@@ -14,6 +14,7 @@
     .table-responsive {
         margin: auto;
         width: 60%;
+        min-width: 280px;
         background: white;
         border-radius:20px ;
         .table{
@@ -30,9 +31,23 @@
                         }
                     &:hover > .not-show {
                         display: inline-block;
-                    }
+                        }
                         
                     }
+                }
+            }
+        }
+    }
+}
+
+.showContainer {
+    background: linear-gradient(to right, rgb(36,41,47), rgb(244,130,37));
+    .sidebar {
+        .sidebarCont {
+            .list-group {
+                .active {
+                    background: rgb(244,130,37);
+                    border: 2px solid white;
                 }
             }
         }
