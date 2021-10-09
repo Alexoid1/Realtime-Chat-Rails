@@ -1,6 +1,8 @@
 // Place all the styles related to the Channels controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "./variables";
+
 .channelsIndex {
     background: linear-gradient(to right, rgb(36,41,47), rgb(244,130,37));
     height: 100%;
@@ -53,9 +55,12 @@
             }
         }
     }
-    .relative {
+    .relativee {
+        margin: 0;
+        padding: 0;
         .messageB{
-            min-height: 90vh;
+            min-height: 80vh;
+            width: 100%;
             background: white;
             padding: 0 0 70px 20px;
             .message {

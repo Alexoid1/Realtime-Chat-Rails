@@ -8,15 +8,25 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("local-time").start()
+import jquery from 'jquery';
+window.$ = window.jquery = jquery;
 
 window.Rails = Rails
 
-import 'bootstrap'
+import bootstrap from 'bootstrap'
 import 'data-confirm-modal'
 
 $(document).on("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
+  console.log('workkk')
+  var myModal = new bootstrap.Modal(document.getElementById('newModal'), {
+    keyboard: false
+  })
+  
+  myModal.show()
+  
 })
 
 import "controllers"
+

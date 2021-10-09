@@ -24,11 +24,7 @@
     <% end %>
 
     <%= form.submit class: 'btn btn-primary' %>
-
-    <% if channel.persisted? %>
-      <%= link_to "Cancel", channel, class: "btn btn-link" %>
-    <% else %>
-      <%= link_to "Cancel", channels_path, class: "btn btn-link" %>
-    <% end %>
+    <%= link_to "Cancel", anchor: "wall", class: "btn btn-link" %>
+    
   </div>
 <% end %>
