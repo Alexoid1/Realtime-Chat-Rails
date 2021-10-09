@@ -3,8 +3,9 @@
   <div class="border-bottom border-danger"></div>
 <% end %>
 
-<div class="messagee">
-  
-  <div><%= message.body %></div>
-  <div class="usermessage"><%= message.user.name %></div>
+<div class="message mb-2 <%= 'me' if message.user == current_user %>">
+  <div class="content-container">
+    <div class="content"><%= message.body %></div>
+    <div class="author"><%= message.user.name %></div>
+  </div>
 </div>

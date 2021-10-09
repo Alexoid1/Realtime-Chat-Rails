@@ -54,13 +54,33 @@
     }
     .relative {
         .messageB{
-            .messagee {
-                padding-top: 7px;
-                .usermessage {
-                    font-size: small;
-                    color: rgb(179, 178, 178);
+            .message {
+                
+                min-width: 59px;
+                .content-container{
+                    display: inline-block;
+                    .content{
+                        padding: 8px 11px;
+                        border-radius: 20px;
+                        background-color: #eeeeee;
+                    }
+                    .author{
+                        color: gray;
+                        font-size: small;
+                    }
                 }
-
+                &.me {
+                    display: flex;
+                    justify-content: right;
+                    .content-container{
+                        .content{
+                            background-color: #007BFF;
+                            color: white;
+                            padding: 8px 11px;
+                            border-radius: 20px;
+                        }
+                    }
+                }
             }
             
         }
