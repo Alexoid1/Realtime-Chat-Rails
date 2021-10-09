@@ -33,10 +33,10 @@ body {
 }
 
 .homeCont {
-  background: #139679;
+  background: rgb(36,41,47);
   .jumb {
-    background: linear-gradient(to right, #a8ff78, #78ffd6);
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    background: linear-gradient(to right, rgb(36,41,47), rgb(244,130,37));
+    
     height: 90vh;
     display: flex;
     align-items: center;
@@ -50,10 +50,10 @@ body {
         line-height: 60px;
         font-weight: 800;
         width: 60%;
-        color: #34495e;
+        color: #ecf0f1;
       }
       p {
-          color: #34495e;
+          color: #ecf0f1;
           width: 80%;
           font-weight: 500;
       }
@@ -84,7 +84,7 @@ body {
 }
 
 .auth-page {
-  background: linear-gradient(to right, #a8ff78, #78ffd6);
+  background: linear-gradient(to right, rgb(36,41,47), rgb(244,130,37));
   height: 100vh;
 
   .form-block {
