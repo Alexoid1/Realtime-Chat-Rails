@@ -8,6 +8,7 @@
     height: 100%;
     min-height: 100vh;
     text-align: center;
+    
     .btn-warning{
         @include btn;
         margin-bottom: 10px;
@@ -93,6 +94,25 @@
                 }
             }
             
+        }
+    }
+
+    .fixed-bottom {
+        .joinLink {
+            
+            
+            z-index: 100;
+            .linkRed {
+                color: rgb(244,130,37);
+                font-size: 29px;
+                width: 100%;
+                margin-left: 30px;
+                
+                
+                
+                
+            }
+           
         }
     }
 }

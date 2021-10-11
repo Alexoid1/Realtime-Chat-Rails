@@ -14,6 +14,7 @@ class ChannelsController < ApplicationController
     @channel_user = current_user.channel_users.find_by(channel: @channel)
     @last_read_at = @channel_user&.last_read_at || @channel.created_at
     @channel_user&.touch(:last_read_at)
+    
   end
 
   # GET /channels/new
