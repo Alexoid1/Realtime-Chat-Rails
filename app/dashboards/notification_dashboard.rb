@@ -8,12 +8,10 @@ class NotificationDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    recipient: Field::BelongsTo.with_options(class_name: "User"),
-    actor: Field::BelongsTo.with_options(class_name: "User"),
+    recipient: Field::BelongsTo,
+    actor: Field::BelongsTo,
     notifiable: Field::Polymorphic,
     id: Field::Number,
-    recipient_id: Field::Number,
-    actor_id: Field::Number,
     read_at: Field::DateTime,
     action: Field::String,
     created_at: Field::DateTime,
@@ -39,8 +37,6 @@ class NotificationDashboard < Administrate::BaseDashboard
   actor
   notifiable
   id
-  recipient_id
-  actor_id
   read_at
   action
   created_at
@@ -54,8 +50,6 @@ class NotificationDashboard < Administrate::BaseDashboard
   recipient
   actor
   notifiable
-  recipient_id
-  actor_id
   read_at
   action
   ].freeze

@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_07_09_185135) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "last_read_at"
+    t.datetime "last_read_at"          
     t.index ["channel_id"], name: "index_channel_users_on_channel_id"
     t.index ["user_id"], name: "index_channel_users_on_user_id"
   end
