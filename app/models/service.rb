@@ -3,6 +3,7 @@ class Service < ApplicationRecord
 
   Devise.omniauth_configs.keys.each do |provider|
     scope provider, ->{ where(provider: provider) }
+    
   end
 
   def client

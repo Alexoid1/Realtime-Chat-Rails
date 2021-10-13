@@ -17,9 +17,14 @@ module Users
       handle_auth "Github"
     end
 
+    def google_oauth2
+      handle_auth "Google_Oauth2"
+    end
+
     private
 
     def handle_auth(kind)
+      logger.debug "The service is: #{kind}"
       if service.present?
         service.update(service_attrs)
       else
