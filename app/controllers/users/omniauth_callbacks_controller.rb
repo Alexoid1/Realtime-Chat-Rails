@@ -37,6 +37,7 @@ module Users
 
     def auth
       request.env['omniauth.auth']
+      
     end
 
     def set_service
@@ -69,11 +70,14 @@ module Users
     end
 
     def create_user
+      fullname=auth.info.name.split(' ')
       User.create(
         email: auth.info.email,
-        #name: auth.info.name,
+        first_name: fullname[0],
+        last_name: fullname[1...].join(' '),
         password: Devise.friendly_token[0,20]
       )
+      
     end
 
   end

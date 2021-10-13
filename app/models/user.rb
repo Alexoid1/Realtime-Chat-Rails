@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_person_name
 
   has_many :notifications, foreign_key: :recipient_id
-  has_many :services
+  has_many :services, dependent: :destroy
   has_many :channel_users, dependent: :destroy
   has_many :channels, through: :channel_users
   has_many :messages, dependent: :destroy
