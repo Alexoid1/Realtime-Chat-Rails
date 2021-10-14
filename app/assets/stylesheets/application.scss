@@ -85,7 +85,8 @@ body {
 
 .auth-page {
   background: linear-gradient(to right, rgb(36,41,47), rgb(244,130,37));
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 
   .form-block {
     margin-top: 80px;
@@ -181,7 +182,20 @@ body {
             margin-left: 3px;
             }
         }
-            
+        .authCont{
+          text-align: center;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          .faceicon {
+            width: 70px;
+          }
+          .googleicon{
+            width: 50px;
+          }    
+        }
+        
     }
   }
 }

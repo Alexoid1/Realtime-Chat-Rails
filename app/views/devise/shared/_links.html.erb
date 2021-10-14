@@ -19,7 +19,23 @@
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
-  <% end -%>
+  <div class="authCont">
+    <%- resource_class.omniauth_providers.each do |provider| %>
+      <% if provider== :facebook %>
+        <%= link_to omniauth_authorize_path(resource_name, provider) do %><br />
+          <img  class="faceicon" src="<%= image_path('face.png') %>" alt="face">
+        <% end%>  
+      <% end %>
+      <% if provider== :github %>
+        <%= link_to omniauth_authorize_path(resource_name, provider) do %><br />
+          <img  class="faceicon" src="<%= image_path('github.png') %>" alt="github">
+        <% end%>  
+      <% end %>
+      <% if provider== :google_oauth2 %>
+        <%= link_to omniauth_authorize_path(resource_name, provider) do %><br />
+          <img  class="googleicon" src="<%= image_path('google.png') %>" alt="google">
+        <% end%>  
+      <% end %>
+    <% end -%>
+  </div>
 <% end -%>
