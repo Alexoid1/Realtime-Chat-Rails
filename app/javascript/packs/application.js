@@ -29,4 +29,4 @@ $(document).on("turbolinks:load", () => {
 })
 
 import "controllers"
-
+import './script.js'

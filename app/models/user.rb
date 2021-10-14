@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :masqueradable, :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :omniauthable
 
   has_person_name
-
+  has_one_attached :avatar
   has_many :notifications, foreign_key: :recipient_id
   has_many :services, dependent: :destroy
   has_many :channel_users, dependent: :destroy
