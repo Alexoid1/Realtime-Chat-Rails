@@ -84,6 +84,13 @@ module Users
       )
       
     end
+    private
+    def sign_up_params
+        params.require(:user).permit(:name, :email, :avatar, :password, announcements_last_read_at, admin, username, avatar)
+    end
+    def account_update_params
+        params.require(:user).permit(:name, :email, :avatar, :password, announcements_last_read_at, admin, username, avatar)
+    end
 
   end
 end

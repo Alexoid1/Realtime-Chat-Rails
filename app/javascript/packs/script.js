@@ -16,4 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     $(".upload-button").on('click', function() {
         $(".file-upload").click();
     })
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
 })  
