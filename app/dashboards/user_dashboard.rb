@@ -10,11 +10,9 @@ class UserDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     notifications: Field::HasMany,
     services: Field::HasMany,
-    channel_users: Field::HasMany,
-    channels: Field::HasMany,
-    messages: Field::HasMany,
     id: Field::Number,
     email: Field::String,
+    password: Field::String.with_options(searchable: false),
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
@@ -25,7 +23,6 @@ class UserDashboard < Administrate::BaseDashboard
     admin: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    username: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -36,8 +33,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
   notifications
   services
-  channel_users
-  channels
+  id
+  email
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -45,9 +42,6 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
   notifications
   services
-  channel_users
-  channels
-  messages
   id
   email
   encrypted_password
@@ -60,7 +54,6 @@ class UserDashboard < Administrate::BaseDashboard
   admin
   created_at
   updated_at
-  username
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -69,9 +62,6 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   notifications
   services
-  channel_users
-  channels
-  messages
   email
   encrypted_password
   reset_password_token
@@ -81,7 +71,6 @@ class UserDashboard < Administrate::BaseDashboard
   last_name
   announcements_last_read_at
   admin
-  username
   ].freeze
 
   # COLLECTION_FILTERS
@@ -102,4 +91,5 @@ class UserDashboard < Administrate::BaseDashboard
   # def display_resource(user)
   #   "User ##{user.id}"
   # end
+  
 end
